@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 73px 35px 0;
-  background-color: @netural-grey-200;
+  background-color: @netural-grey-100;
   font-family: @font-family-base;
   font-size: 13px;
   main {
@@ -78,6 +78,9 @@ body {
           font-size: 12px;
         }
       }
+      .bgc {
+        display: none;
+      }
       section {
         &:nth-of-type(1) {
           font-size: 22px;
@@ -118,6 +121,8 @@ body {
       "top-left top-left top-middle right"
       "bottom-left bottom-middle bottom-middle right";
       article {
+        position: relative;
+        overflow: hidden;
         margin-top: 0 !important;
         box-shadow: 40px 40px 20px rgba(103, 109, 126, 0.1);
         &:nth-child(1) {
@@ -134,6 +139,17 @@ body {
         }
         &:nth-child(5) {
           grid-area: right;
+        }
+        .bgc {
+          display: block;
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 25vw;
+        }
+        .title, section {
+          position: relative;
+          z-index: 10;
         }
       }
     }
